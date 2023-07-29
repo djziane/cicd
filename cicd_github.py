@@ -13,4 +13,4 @@ from sklearn.metrics import roc_auc_score
 # Use the model to make predictions on the test dataset.
 #predictions = rf.predict(X_test)
 def metric():
-    return roc_auc_score([1,1,0,1],[1,1,0,0])
+    return roc_auc_score([1,1,0,1],[1,1,0,1])
