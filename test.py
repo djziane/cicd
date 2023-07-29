@@ -1,5 +1,9 @@
 from cicd_github import metric
 
 
-def test_add():
-    assert metric()>0.8
+def add_test():
+    assert metric()==1.0
+
+
+def test_sub():
+    assert metric()==1.0
