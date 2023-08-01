@@ -20,7 +20,7 @@ def test_sum(test_input,expected):
 
 @pytest.fixture(scope="session")
 def db_conn():
-    return mysql.connector.connect(user='root', password='pass',
+    return mysql.connector.connect(user='root', password='root',
                                   host='127.0.0.1',
                                   database='test_db')
 
