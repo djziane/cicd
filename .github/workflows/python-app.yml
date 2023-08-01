@@ -28,7 +28,7 @@ jobs:
       run: |
         sudo /etc/init.d/mysql start
         mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
-        mysql -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}  -e 'use ${{ env.DB_DATABASE }};CREATE TABLE test_table (num int,stri varchar(5));insert into pytesting values (3,"test");'
+        mysql -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}  -e 'use ${{ env.DB_DATABASE }};CREATE TABLE test_table (num int,stri varchar(5));insert into tet_table values (3,"test");'
     - uses: actions/checkout@v3
     - name: Set up Python 3.8
       uses: actions/setup-python@v3
