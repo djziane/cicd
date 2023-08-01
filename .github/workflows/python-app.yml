@@ -14,6 +14,7 @@ permissions:
 
 env:
   DB_DATABASE: test_db
+  DB_TABLE: test_table
   DB_USER: root
   DB_PASSWORD: root
 
@@ -27,6 +28,8 @@ jobs:
       run: |
         sudo /etc/init.d/mysql start
         mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
+        mysql -e use ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
+        mysql -e 'TABLE ${{ env.DB_TABLE }}(num int,stri varchar(5))' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
     - uses: actions/checkout@v3
     - name: Set up Python 3.8
       uses: actions/setup-python@v3
