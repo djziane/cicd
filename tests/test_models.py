@@ -8,7 +8,7 @@ from src import lib
 
 @pytest.fixture(scope="session")
 def load_model():
-    path_model = "/src/models/"
+    path_model = "src/models/"
     return load(path_model+'model_svm.joblib')
 
 @pytest.fixture(scope="session")
